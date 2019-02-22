@@ -17,7 +17,8 @@ mkdir -p $VENDOR_DIR
 INSTALL_DIR="$VENDOR_DIR/imagemagick"
 mkdir -p $INSTALL_DIR
 IMAGE_MAGICK_VERSION="${IMAGE_MAGICK_VERSION:-7.0.8-28}"
-CACHE_FILE="$CACHE_DIR/imagemagick-$IMAGE_MAGICK_VERSION.tar.gz"
+# Use Imagemagick binary from S3
+CACHE_FILE="https://s3.amazonaws.com/imagemagick/ImageMagick-7.0.8-28.tar.gz"
 
 if [ ! -f $CACHE_FILE ]; then
   # install imagemagick
